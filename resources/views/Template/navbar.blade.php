@@ -133,3 +133,10 @@
       </li>
     </ul>
   </nav>
+
+  <nav class="main-footer">
+        <marquee>
+            <strong>PENGUMUMAN BESOK LIBUR KAWAN</strong>
+            
+        </marquee>
+</nav>
