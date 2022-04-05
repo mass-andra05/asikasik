@@ -76,7 +76,7 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="{{ asset ('AdminLte/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset ('AdminLte/plugins/jquery/jquery.min.js')}}"></script>
 @include('Template.script')
 </body>
 </html>

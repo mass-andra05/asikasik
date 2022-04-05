@@ -23,8 +23,8 @@
             <h3><strong>Smart Attendence</strong></h3>
         </a>
         <div class="button ml-auto">
-          <a href="{{route ('login')}}" class="btn-daftar">Registasi</a>
-          <a href="{{route ('registrasi')}}" class="btn-masuk">Log In</a>
+          <a href="{{route ('login')}}" class="btn-daftar">Login</a>
+          <a href="{{route ('registrasi')}}" class="btn-masuk">Registrasi</a>
         </div>
       </div>
     </nav>
@@ -38,7 +38,7 @@
         <h1 class="text-content">Ayo Presensi Sekarang! <br>
          Jangan Sampai Terlambat
         </h1>
-        <a href="{{route ('login')}}" class="btn-presensi">LOG IN</a>
+        <a href="{{route ('login')}}" class="btn-presensi">Presensi Sekarang Juga!</a>
       </div>
     </div>
   </section>
