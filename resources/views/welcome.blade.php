@@ -23,10 +23,18 @@
             <h3><strong>Smart Attendence</strong></h3>
         </a>
         <div class="button ml-auto">
-          <a href="{{route ('login')}}" class="btn-daftar">Login</a>
-          <a href="{{route ('registrasi')}}" class="btn-masuk">Registrasi</a>
-        </div>
-      </div>
+        @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+            <a href="{{ url('/home') }}" class="btn-masuk">Home</a>
+            @else
+            <a href="{{ route('login') }}" class="btn-daftar">Login</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="btn-masuk">Register</a>
+            @endif
+            @endif
+        @endif
     </nav>
   </nav>
   <!-- Akhir Navbar -->
@@ -38,7 +46,18 @@
         <h1 class="text-content">Ayo Presensi Sekarang! <br>
          Jangan Sampai Terlambat
         </h1>
-        <a href="{{route ('login')}}" class="btn-presensi">Presensi Sekarang Juga!</a>
+        @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+            <a href="{{ url('/home') }}" class="btn-masuk">Presensi Sekarang Juga!</a>
+            @else
+            <a href="{{ route('login') }}" class="btn-daftar">Presensi Sekarang Juga!</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="btn-masuk">Register</a>
+            @endif
+            @endif
+        @endif
       </div>
     </div>
   </section>
