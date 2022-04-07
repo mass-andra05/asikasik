@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -131,12 +131,16 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('logout') }}" class="nav-link">
+          <i class="fas fa-sign-out-alt lg"> LogOut</i>
+        </a>
+      </li>
     </ul>
   </nav>
 
-  <nav class="main-footer">
+  <nav class="">
         <marquee>
-            <strong>PENGUMUMAN BESOK LIBUR KAWAN</strong>
-            
+            <strong><h3>PENGUMUMAN BESOK LIBUR KAWAN</h3></strong>  
         </marquee>
 </nav>

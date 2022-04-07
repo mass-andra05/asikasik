@@ -19,15 +19,15 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition register-page">
-    <div class="register-box">
-        <div class="register-logo">
-            <a href="{{ url('/') }}"><b>Admin</b>LTE</a>
-        </div>
-
+<div class="register-box">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="../../index2.html" class="h1"><b>Smart</b>Attadence</a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Register a new membership</p>
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">Register a new membership</p>
-
                 <form action="{{ route('simpanregistrasi') }}" method="post">
                     {{ csrf_field() }}
                     <div class="input-group mb-3">
@@ -66,8 +66,8 @@
                     </div>
                 </form>
 
-
-                <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+                <br>
+                <a href="{{ route('login') }}" class="text-center">Sudah Punya Akun? Silahkan Login</a>
 
             </div>
             <!-- /.form-box -->
@@ -79,3 +79,6 @@
     @include('Template.script')
 </body>
 </html>
+
+
+

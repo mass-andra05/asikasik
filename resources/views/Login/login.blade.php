@@ -23,8 +23,9 @@
       <a href="../../index2.html" class="h1"><b>Smart</b>Attadence</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
+      <p class="login-box-msg">Login Sekarang Untuk Memulai</p>
+      <div class="card">
+         <div class="card-body register-card-body">
       <form action="{{route ('postlogin')}}" method="post">
           {{ csrf_field() }}
         
@@ -55,18 +56,14 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
+      <br>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="{{route ('registrasi')}}"class="text-center">Belum Punya Akun? Silahkan Registrasi</a>
       </p>
     </div>
     <!-- /.card-body -->
