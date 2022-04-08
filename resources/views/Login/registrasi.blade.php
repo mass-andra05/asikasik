@@ -31,7 +31,8 @@
                 <form action="{{ route('simpanregistrasi') }}" method="post">
                     {{ csrf_field() }}
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="name" placeholder="Full name">
+                        <input type="text" class="form-control" name="name" placeholder="Full name"required autofocus>
+                        <span class="help-block with-errors"></span>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -39,7 +40,8 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" placeholder="Email"required autofocus>
+                        <span class="help-block with-errors"></span>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -47,7 +49,8 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password"required autofocus>
+                        <span class="help-block with-errors"></span>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

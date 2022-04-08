@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
-
+    @include('sweetalert::alert')
     <!-- jQuery -->
     @include('Template.script')
 </body>

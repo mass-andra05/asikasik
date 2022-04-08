@@ -52,18 +52,18 @@ class PresensiController extends Controller
             ['tgl','=',$tanggal],
         ])->first();
         if ($presensi){
-            dd("sudah ada");
-        }else{
+            return redirect('presensi-masuk')->with('warning', 'Maaf Anda Sudah Melakukan Presensi Masuk');
+        } else {
             Presensi::create([
                 'user_id' => auth()->user()->id,
                 'tgl' => $tanggal,
                 'jammasuk' => $localtime,
             ]);
-        }
-         
+        } 
 
-        return redirect('presensi-masuk');
+        return redirect('presensi-masuk')->with('success', 'Presensi Masuk Sukses');
     }
+
 
     /**
      * Display the specified resource.
@@ -119,9 +119,9 @@ class PresensiController extends Controller
 
         if ($presensi->jamkeluar == ""){
             $presensi->update($dt);
-            return redirect('presensi-keluar');
+            return redirect('presensi-keluar')->with('success', 'Presensi Keluar Sukses');
         }else{
-            dd("sudah ada");
+            return redirect('presensi-keluar')->with('warning', 'Maaf Anda Sudah Melakukan Presensi Keluar');
         }
     }
 
