@@ -20,9 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
 route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');
 route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->name('simpanregistrasi');
+});
+
 route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
 route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 route::get('/logout',[LoginController::class,'logout'])->name('logout');

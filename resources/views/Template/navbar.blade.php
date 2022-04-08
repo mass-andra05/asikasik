@@ -7,9 +7,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -132,15 +129,15 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('logout') }}" class="nav-link">
-          <i class="fas fa-sign-out-alt lg"> LogOut</i>
+        <a href="{{ route('logout') }}" class="nav-link">LogOut 
+          <i class="fas fa-sign-out-alt lg"></i>
         </a>
       </li>
     </ul>
   </nav>
 
-  <nav class="">
-        <marquee>
-            <strong><h3>PENGUMUMAN BESOK LIBUR KAWAN</h3></strong>  
-        </marquee>
-</nav>
+<footer style="font-size: 30px">
+      <marquee>
+          <strong>PENGUMUMAN BESOK LIBUR KAWAN</strong>
+      </marquee>
+    </footer>

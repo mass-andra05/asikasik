@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css')}}">
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
 </head>
-<body>
+<body style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
 
   <!-- Awal Navbar -->
 <p></p>

@@ -11,7 +11,7 @@
 <body>
   <!-- Awal Content -->
   <section>
-    <div class="container-fluid content">
+    <div class="container-fluid content"style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
       <div class="container text-center col-md-8">
       <br>
        <h1> <b>{{ config('app.name') }} <b></h1>

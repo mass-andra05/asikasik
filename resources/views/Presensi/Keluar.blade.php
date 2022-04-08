@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('Template.left-sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper"style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">

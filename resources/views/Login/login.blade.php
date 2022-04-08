@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset ('AdminLte/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
@@ -64,11 +64,16 @@
         </div>
       </form>
       <br>
-      <p class="mb-0">
+
+      
+      <!-- /.card-body<p class="mb-0">
         <a href="{{route ('registrasi')}}"class="text-center">Belum Punya Akun? Silahkan Registrasi</a>
       </p>
     </div>
-    <!-- /.card-body -->
+     /.card-body -->
+
+
+
   </div>
   <!-- /.card -->
 </div>

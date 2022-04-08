@@ -18,7 +18,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition register-page" style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
