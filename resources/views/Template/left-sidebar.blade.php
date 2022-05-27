@@ -60,7 +60,7 @@
           </li>
 
           @endif 
-          <li class="nav-item">
+          <d class="nav-item">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -86,7 +86,32 @@
               </li>
               @endif
             </ul>
-          </li>
+            <li class="nav-item">
+                <a href="/pengumuman" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Pengumuman
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/jadwalpiket" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      Jadwal Piket
+                    </p>
+                </a>
+            </li>
+            @if (auth()->user()->level =="admin")
+            <li class="nav-item">
+                <a href="/catatankerja" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      catatan kerja
+                    </p>
+                </a>
+            </li>
+            @endif
           <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>

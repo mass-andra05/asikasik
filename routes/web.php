@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\JadwalpiketController;
+use App\Http\Controllers\CatatankerjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +50,10 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('filter-data-karyawan/{tglawal}/{tglakhir}',[PresensiController::class,'admintampildatakeseluruhan'])->name('filter-data-keseluruhan');
     Route::get('/cetak-laporan', [PresensiController::class, 'cetakLaporan'])->name('cetak-laporan');
 });
+
+Route::resource('/pengumuman', PengumumanController::class)->middleware('auth');
+
+Route::resource('/catatankerja', CatatankerjaController::class)->middleware('auth');
+
+Route::resource('/jadwalpiket', JadwalpiketController::class)->middleware('auth');
+Route::put('/update', [ JadwalpiketController::class, 'update'])->middleware('auth');
