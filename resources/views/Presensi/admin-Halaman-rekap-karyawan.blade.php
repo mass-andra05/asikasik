@@ -80,6 +80,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                      <td>{{ $item->jammasuk }}</td>
                                      <td>{{ $item->jamkeluar }}</td>
                                      <td>{{ $item->jamkerja }}</td>
+                                     <td>
+                                     <a class="btn btn-secondary border-0 shadow-none" href="https://www.google.com/maps/search/{{ $item->latitude }},{{ $item->longitude }}?sa=X&ved=2ahUKEwjusPjP-KP3AhWLRmwGHQAzB2sQ8gF6BAgCEAE" target="_blank" role="button"><span data-feather="map-pin">Maps</span></a>
+                                     </td>
                                     </tr>
                                   
                                   @endforeach

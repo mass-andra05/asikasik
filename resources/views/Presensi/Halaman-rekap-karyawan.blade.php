@@ -69,6 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                      <th scope="col">Jam Masuk</th>
                                      <th scope="col">Jam Keluar</th>
                                      <th scope="col">Jumlah Jam Kerja</th>
+                                     <th scope="col">Lokasi</th>
                                  </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +81,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                      <td>{{ $item->jammasuk }}</td>
                                      <td>{{ $item->jamkeluar }}</td>
                                      <td>{{ $item->jamkerja }}</td>
+                                     <td>
+                                     <a class="btn btn-secondary border-0 shadow-none" href="https://www.google.com/maps/search/{{ $item->latitude }},{{ $item->longitude }}?sa=X&ved=2ahUKEwjusPjP-KP3AhWLRmwGHQAzB2sQ8gF6BAgCEAE" target="_blank" role="button"><span data-feather="map-pin">Maps</span></a>
+                                     </td>
                                     </tr>
                                   @endif  
                                   @endforeach

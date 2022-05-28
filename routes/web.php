@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CutiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PresensiController;
@@ -57,3 +58,6 @@ Route::resource('/catatankerja', CatatankerjaController::class)->middleware('aut
 
 Route::resource('/jadwalpiket', JadwalpiketController::class)->middleware('auth');
 Route::put('/update', [ JadwalpiketController::class, 'update'])->middleware('auth');
+
+Route::resource('/cuti', CutiController::class)->middleware('auth');
+Route::post('/cuti/status/{id}', [CutiController::class,'status']);

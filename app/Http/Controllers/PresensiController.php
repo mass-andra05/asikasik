@@ -57,6 +57,8 @@ class PresensiController extends Controller
             Presensi::create([
                 'user_id' => auth()->user()->id,
                 'tgl' => $tanggal,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
                 'jammasuk' => $localtime,
             ]);
         } 

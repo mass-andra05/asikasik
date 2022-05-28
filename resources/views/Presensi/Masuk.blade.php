@@ -55,6 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <label id="clock" style="font-size: 80px;">
               </label>
             </center>
+            <input type="hidden" name="latitude" id="latitude" class="latitude" required value="">
+            <input type="hidden" name="longitude" id="longitude" class="longitude" required value="">
           <button class="btn btn-primary btn-presensi" type="submit">Klik Untuk Presensi Masuk</button>
         </form>
       </div>
@@ -84,5 +86,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('sweetalert::alert')
     <!-- jQuery -->
     @include('Template.script')
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+		navigator.geolocation.getCurrentPosition(function (position) {
+   			 tampilLokasi(position);
+		}, function (e) {
+		    alert('Geolocation Tidak Mendukung Pada Browser Anda');
+		}, {
+		    enableHighAccuracy: true
+		});
+	});
+	
+	function tampilLokasi(posisi) {
+			var latitude 	= posisi.coords.latitude;
+			var longitude 	= posisi.coords.longitude;
+	
+			const latitude_value = document.querySelector('.latitude');
+			latitude_value.setAttribute('value', latitude);
+			const longitude_value = document.querySelector('.longitude');
+			longitude_value.setAttribute('value', longitude);
+	}
+	
+</script>
 </body>
 </html>
