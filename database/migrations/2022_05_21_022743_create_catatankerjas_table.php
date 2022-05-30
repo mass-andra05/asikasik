@@ -17,6 +17,7 @@ class CreateCatatankerjasTable extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi');
+             $table->string('user');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\catatankerja;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorecatatankerjaRequest;
@@ -31,6 +32,7 @@ class CatatankerjaController extends Controller
     {
         return view('catatankerja.tambah', [
             'title' => "Tambah Catatan",
+            'users' => User::where('level', 'karyawan')->latest()->get()
         ]);
     }
 
@@ -45,6 +47,7 @@ class CatatankerjaController extends Controller
         $catatankerja = $request->validate([
             'judul' => 'required|max:255',
             'deskripsi' => 'required',
+            'user' => 'required'
         ]);
         
         catatankerja::create($catatankerja);

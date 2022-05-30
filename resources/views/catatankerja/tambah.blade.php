@@ -54,6 +54,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi" rows="3" required></textarea>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">User</label>
+                                    <select class="form-control " id="exampleFormControlTextarea1" name="user" required>
+                                    <option selected></option>
+                                    @foreach( $users as $user )
+                                    <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                    @endforeach
+                                </select>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </form>
                             </div>

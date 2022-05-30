@@ -59,6 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th scope="col">#</th>
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
+                                            <th scope="col">User</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                 </thead>
@@ -68,6 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $catatankerja->judul }}</td>
                                             <td>{{ $catatankerja->deskripsi }}</td>
+                                            <td>{{ $catatankerja->user }}</td>
                                             <td>
                                             <a class="badge bg-warning  border-0 p-2 d-inline" href="/catatankerja/{{ $catatankerja->id }}/edit" >Update</a>
                                             <form action="/catatankerja/{{ $catatankerja->id }}" method="post" class="d-inline">
