@@ -44,24 +44,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="container  col-md-">
                         <div class="card-header"><h3>{{ $title }}</h3></div>
                         <div class="card-body col-lg-8">
-                            <form  class="form-valide" action="/catatankerja" method="post">
+                            <form  class="form-valide" action="/cuti" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">judul</label>
-                                    <input type="text" class="form-control" name="judul" id="exampleFormControlInput1" placeholder="Judul ..." required>
+                                    <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
+                                    <input type="date" class="form-control  @error('tanggal') is-invalid @enderror" name="tanggal" id="exampleFormControlInput1" placeholder="Tanggal Cuti ... " required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi" rows="3" required></textarea>
+                                    <label for="exampleFormControlInput1" class="form-label">User</label>
+                                    <input type="text" class="form-control"  id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required disabled>
+                                    <input type="hidden" class="form-control" name="user" id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required>
+                                    
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">User</label>
-                                    <select class="form-control " id="exampleFormControlTextarea1" name="user" required>
+                                    <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
+                                    <select class="form-control  @error('keterangan') is-invalid @enderror" id="exampleFormControlTextarea1" name="keterangan" required>
                                     <option selected></option>
-                                    @foreach( $users as $user )
-                                    <option value="{{ $user->name }}">{{ $user->name }}</option>
-                                    @endforeach
+                                    <option value="sakit">sakit</option>
+                                    <option value="izin">izin</option>
                                 </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="file" class="form-label">Foto / File</label>
+                                    <input type="file" class="form-control  @error('file') is-invalid @enderror" name="file" id="file" placeholder="Silakan Masukkan ..." required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </form>
