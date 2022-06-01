@@ -59,14 +59,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Tanggal</th>
                                             <th scope="col">User</th>
+                                            <th scope="col">Awal Cuti</th>
+                                            <th scope="col">Akhir Cuti</th>
                                             <th scope="col">File / Foto</th>
                                             <th scope="col">Keterangan</th>
                                             <th scope="col">status</th>
-                                            @if(auth()->user()->level =="admin")
                                             <th scope="col">action</th>
-                                            @endif
                                         </tr>
                                 </thead>
                                 <tbody>
@@ -74,8 +73,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     @foreach( $cutis as $cuti )
                                         <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $cuti->tanggal }}</td>
                                         <td>{{ $cuti->user }}</td>
+                                        <td>{{ $cuti->tanggal_awal }}</td>
+                                        <td>{{ $cuti->tanggal_akhir }}</td>
                                         <td><a method="post" href="{{ asset('storage/' . $cuti->file) }}" target="_blank">{{ $cuti->nama_file }}</td>
                                         <td>{{ $cuti->keterangan }}</td>
                                         <td>
@@ -89,6 +89,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <strong>Pengajuan Cuti</strong><br> 
                                             <span class="badge badge-warning" style="color:white; ">Dalam Proses</span>
                                         @endif
+                                        </td>
+                                        <td>
+                                        <form action="/cuti/{{ $cuti->id }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="badge bg-danger border-0 color-white" onclick="return confirm(' Apakah Kamu Yakin Untuk Menghapus ')">Delete</button>
+                                        </form>
                                         </td>
                                         </tr>
                                     @endforeach
@@ -129,6 +136,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         @else
                                         <span class="badge badge-warning" style="color:white; ">Status Telah Ada</span>
                                         @endif
+                                        <form action="/cuti/{{ $admin->id }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="badge bg-danger border-0 color-white" onclick="return confirm(' Apakah Kamu Yakin Untuk Menghapus ')">Delete</button>
+                                        </form>
                                         </td>
                                         </tr>
                                     @endforeach

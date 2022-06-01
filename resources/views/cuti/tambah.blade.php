@@ -47,16 +47,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <form  class="form-valide" action="/cuti" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
-                                    <input type="date" class="form-control  @error('tanggal') is-invalid @enderror" name="tanggal" id="exampleFormControlInput1" placeholder="Tanggal Cuti ... " required>
-                                </div>
-                                <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">User</label>
                                     <input type="text" class="form-control"  id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required disabled>
                                     <input type="hidden" class="form-control" name="user" id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required>
                                     
                                 </div>
-
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
                                     <select class="form-control  @error('keterangan') is-invalid @enderror" id="exampleFormControlTextarea1" name="keterangan" required>
@@ -64,6 +59,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <option value="sakit">sakit</option>
                                     <option value="izin">izin</option>
                                 </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Awal Cuti</label>
+                                    <input type="date" class="form-control  @error('tanggal_awal') is-invalid @enderror" name="tanggal_awal" id="exampleFormControlInput1" placeholder="Tanggal Awal Cuti ... " required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Akhir Cuti</label>
+                                    <input type="date" class="form-control  @error('tanggal_akhir') is-invalid @enderror" name="tanggal_akhir" id="exampleFormControlInput1" placeholder="Tanggal Akhir Cuti ... " required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="file" class="form-label">Foto / File</label>

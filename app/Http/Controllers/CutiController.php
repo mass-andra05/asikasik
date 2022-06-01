@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\cuti;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorecutiRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdatecutiRequest;
 
 class CutiController extends Controller
@@ -55,7 +56,8 @@ class CutiController extends Controller
     {
         $request->validate([
             'keterangan' => 'required|max:255',
-            'tanggal' => 'required|max:255',
+            'tanggal_awal' => 'required|max:255',
+            'tanggal_akhir' => 'required|max:255',
             'file' => 'required|file|max:5024',
         ]);
 
@@ -73,7 +75,8 @@ class CutiController extends Controller
 
         $cuti->user = $request->user;
         $cuti->keterangan = $request->keterangan;
-        $cuti->tanggal = $request->tanggal;
+        $cuti->tanggal_awal = $request->tanggal_awal;
+        $cuti->tanggal_akhir = $request->tanggal_akhir;
 
         $cuti->nama_file = $originalName. '.' . $extension ;
         $cuti->file = $path;
@@ -127,6 +130,12 @@ class CutiController extends Controller
      */
     public function destroy(cuti $cuti)
     {
-        //
+        if($cuti->file) {
+            Storage::delete($cuti->file);
+        }
+
+        cuti::destroy($cuti->id);
+        // kembalikan ke halaman cuti
+        return redirect('/cuti')->with('success', 'Selamat Data Telah DIhapus!!');
     }
 }

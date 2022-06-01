@@ -17,7 +17,8 @@ class CreateCutisTable extends Migration
             $table->id();
             $table->string('user');
             $table->string('keterangan');
-            $table->date('tanggal');
+            $table->date('tanggal_awal');
+            $table->date('tanggal_akhir');
             $table->string('status')->nullable();
             $table->string('nama_file');
             $table->string('file');
