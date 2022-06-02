@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <title>{{ config('app.name') }} - Rekap Absensi</title>
+    <title>{{ config('app.name') }} - {{ $title }}</title>
     @include('Template.head')
 
 </head>
@@ -51,12 +51,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card-header">
                         <a class="btn btn-primary" href="/catatankerja/create" role="button">Tambah Catatan</a>
                             </div>
-                        <div class="card-body">
-                            <div class="card-header">{{ $title }}</div>
-                                <table class="table">
+                            <div class="card-body p-0 table-responsive">
+                            <table class="table table-striped table-hover mb-0">
                                 <thead>
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">No</th>
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">User</th>

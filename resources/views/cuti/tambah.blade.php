@@ -5,48 +5,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <title>{{ config('app.name') }} - Rekap Absensi</title>
-    @include('Template.head')
+    <title>{{ config('app.name') }} - Tambah Cuti</title>
+    @include('layouts.welcome')
 
 </head>
 <body class="hold-transition sidebar-mini">
-
-    <div class="wrapper">
-
-        <!-- Navbar -->
-        @include('Template.navbar')
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        @include('Template.left-sidebar')
-
+<div class="container mt--9 pb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-8">
+        <div class="card bg-secondary shadow border-0" style="background-image: url({{ asset('frontend/img/bg.webp')}})"; >
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper"style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
+        <div class="content-header">
+            <div class="card-body px-lg-5 py-lg-5">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                             <ol class="breadcrumb float-sm-left">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="breadcrumb-item active">{{ $title }}</li>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Tambah Cuti</li>
                             </ol>
-                        </div><!-- /.col -->
+                        
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
+
 
             <!-- /.content-header -->
 
             <!-- Main content -->
             <div class="content">
             <div class="container-fluid content">
-                        <div class="container  col-md-">
+                        <div class="container">
                         <div class="card-header"><h3>{{ $title }}</h3></div>
-                        <div class="card-body col-lg-8">
+                        <div class="card-body col-lg-15">
                             <form  class="form-valide" action="/cuti" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label for="exampleFormControlInput1" class="form-label">User</label>
                                     <input type="text" class="form-control"  id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required disabled>
                                     <input type="hidden" class="form-control" name="user" id="exampleFormControlInput1" placeholder="Nama User ... " value="{{ auth()->user()->name }}" required>
@@ -79,28 +75,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </div>
             </div>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-
-        <!-- Main Footer -->
-        @include('Template.footer')
     </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-
-    <!-- jQuery -->
-    @include('Template.script')
+</div>
+        <!-- /.content-wrapper -->
+        @include('layouts.footer')
+        @include('sweetalert::alert')
 </body>
 </html>

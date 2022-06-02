@@ -78,7 +78,7 @@
               </li>
               @endif
               @if (auth()->user()->level =="admin")
-              <li class="nav-item">
+              <li class="nav nav-item">
                 <a href="{{ route('data-karyawan') }}"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Presensi Keseluruhan</p>
@@ -88,7 +88,7 @@
             </ul>
             <li class="nav-item">
                 <a href="/pengumuman" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-bullhorn"></i>
                     <p>
                         Pengumuman
                     </p>
@@ -96,7 +96,7 @@
             </li>
             <li class="nav-item">
                 <a href="/jadwalpiket" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-calendar-check"></i>
                     <p>
                       Jadwal Piket
                     </p>
@@ -117,6 +117,21 @@
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                       Pengajuan Cuti
+                    </p>
+                </a>
+            </li> <li class="nav-item">
+                <a href="{{ route('profil') }}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      Profil
+                    </p>
+                </a>
+            </li>
+            </li> <li class="nav-item">
+                <a href="/user" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      Data User
                     </p>
                 </a>
             </li>

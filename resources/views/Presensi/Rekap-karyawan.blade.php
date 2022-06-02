@@ -5,36 +5,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <title>{{ config('app.name') }} - Rekap Absensi</title>
-    @include('Template.head')
+    <title>{{ config('app.name') }} - Hasil Fiter Data Pertanggal Prersensi</title>
+    @include('layouts.welcome')
 
 </head>
 <body class="hold-transition sidebar-mini">
-
-    <div class="wrapper">
-
-        <!-- Navbar -->
-        @include('Template.navbar')
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        @include('Template.left-sidebar')
-
+<div class="container mt--9 pb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-8">
+        <div class="card bg-secondary shadow border-0">
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper"style="background-image: url({{ asset('frontend/img/bg.webp')}}); ">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
+        <div class="content-header">
+            <div class="card-body px-lg-5 py-lg-5">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                             <ol class="breadcrumb float-sm-left">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Rekap Prersensi Karyawan</li>
+                                <li class="breadcrumb-item active">Hasil Fiter Data Pertanggal Prersensi</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
+
 
             <!-- /.content-header -->
 
@@ -58,9 +54,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     Lihat <i class="fas fa-print"></i>
                                 </a>
                             </div>
-                            <div class="container-fluid content">
+
+                            <div>
+                            <center>
                             <div class="container text-center col-md-">
-                                <table class="table">
+                            <div class="card-header">Riwayat Presensi Karyawan</div>
+                            <div class="card-body p-0 table-responsive">
+                            <table class="table table-striped table-hover mb-0">
                                 <thead>
                                     <tr>
                                      <th scope="col">Nama Karyawan</th>
@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                      <td>{{ $item->jamkeluar }}</td>
                                      <td>{{ $item->jamkerja }}</td>
                                      <td>
-                                     <a class="btn btn-secondary border-0 shadow-none" href="https://www.google.com/maps/search/{{ $item->latitude }},{{ $item->longitude }}?sa=X&ved=2ahUKEwjusPjP-KP3AhWLRmwGHQAzB2sQ8gF6BAgCEAE" role="button"><span data-feather="map-pin"></span></a>
+                                     <a class="btn btn-secondary border-0 shadow-none" href="https://www.google.com/maps/search/{{ $item->latitude }},{{ $item->longitude }}?sa=X&ved=2ahUKEwjusPjP-KP3AhWLRmwGHQAzB2sQ8gF6BAgCEAE" target="_blank" role="button"><span data-feather="map-pin">Maps</span></a>
                                      </td>
                                     </tr>
                                   @endif  
@@ -93,29 +93,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </div>
             </div>
-            <!-- /.content -->
         </div>
+    </div>   
 </div>
-        <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-<div>
+</div>
+</div>
+           <!-- /.content-wrapper -->
         <!-- Main Footer -->
-        @include('Template.footer')
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-
-    <!-- jQuery -->
-    @include('Template.script')
+        @include('layouts.footer')
 </body>
 </html>

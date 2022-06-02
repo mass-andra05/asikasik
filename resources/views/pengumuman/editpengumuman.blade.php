@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <title>{{ config('app.name') }} - Rekap Absensi</title>
+    <title>{{ config('app.name') }} - {{ $title }}</title>
     @include('Template.head')
 
 </head>

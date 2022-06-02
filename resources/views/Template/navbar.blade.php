@@ -138,6 +138,6 @@
 
 <footer style="font-size: 30px">
       <marquee>
-          <strong>PENGUMUMAN BESOK LIBUR KAWAN</strong>
+          <strong>Selamat Datang <i>{{ auth()->user()->name }}</i> di Aplikasi  <i>{{ config('app.name') }}</i></strong>
       </marquee>
     </footer>
